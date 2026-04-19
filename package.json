@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "./index.js",
-  "keywords": ["jsonresume", "jsonresume-theme"],
+  "keywords": ["jsonresume", "jsonresume-theme", "resume", "berlin", "berlin-grid", "cv", "theme"],
   "repository": {
     "type": "git",
     "url": "https://github.com/JabukeGrada/jsonresume-theme-berlin-grid-ats.git"
