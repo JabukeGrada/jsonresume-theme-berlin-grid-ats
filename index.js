@@ -41,7 +41,7 @@ const style = `*, *::before, *::after {
         .header {
             padding-bottom: 32px;
             border-bottom: 3px solid #1a1a1a;
-            margin-bottom: 64px;
+            margin-bottom: 32px;
         }        
 
         .name {
@@ -417,7 +417,6 @@ function renderHeader(basics) {
     lines.push('<header class="header">');
     if (basics.name) lines.push(`\t<h1 class="name">${basics.name}</h1>`);
     if (basics.label) lines.push(`\t<div class="tagline">${basics.label}</div>`);
-    if (basics.summary) lines.push(`\t<p class="summary">${basics.summary}</p>`);
     lines.push('\t' + renderContact({
         email: basics.email,
         phone: basics.phone,
@@ -425,8 +424,16 @@ function renderHeader(basics) {
         location: basics.location,
         profiles: basics.profiles || [],
     }));
+
     lines.push('</header>');
 
+    return lines.join('\n');
+}
+
+function renderSummary(summary) {
+    let lines = ['<section class="section no-break">']
+    lines.push(`\t<p class="summary">${summary}</p>`);
+    lines.push('</section>');
     return lines.join('\n');
 }
 
@@ -661,16 +668,17 @@ function renderBody(resume) {
     let lines = ['<div class="layout">']
     lines.push(indentText(1, renderHeader(basics)));
 
+    if (basics.summary) lines.push(indentText(1, renderSummary(basics.summary)));
     if (work.length > 0) lines.push(indentText(1, renderWork(work)));
     if (projects.length > 0) lines.push(indentText(1, renderProjects(projects)));  
     if (skills.length > 0) lines.push(indentText(1, renderSkills(skills)));
+    if (references.length > 0) lines.push(indentText(1, renderReferences(references)));
+    if (publications.length > 0) lines.push(indentText(1, renderPublications(publications)));
+    if (awards.length > 0) lines.push(indentText(1, renderAwards(awards)));
+    if (volunteer.length > 0) lines.push(indentText(1, renderVolunteer(volunteer)));
     if (education.length > 0) lines.push(indentText(1, renderEducation(education)));
     if (languages.length > 0) lines.push(indentText(1, renderLanguages(languages)));
-    if (awards.length > 0) lines.push(indentText(1, renderAwards(awards)));
-    if (publications.length > 0) lines.push(indentText(1, renderPublications(publications)));
-    if (volunteer.length > 0) lines.push(indentText(1, renderVolunteer(volunteer)));
     if (interests.length > 0) lines.push(indentText(1, renderInterests(interests)));
-    if (references.length > 0) lines.push(indentText(1, renderReferences(references)));
 
     lines.push('</div>');
     return lines.join('\n');
