@@ -6,7 +6,7 @@ Changes:
 - Pure JavaScript
 - No dependencies
 - Safe URL removed (you can use HTML tags in texts)
-- Optimized for printing (export as html, then Print to PDF)
+- Optimized for printing (export as HTML, then Print to PDF)
 - Optimized for ATS
 
 ## Installation
@@ -15,4 +15,4 @@ In target folder run: `npm i jsonresume-theme-berlin-grid-ats`
 
 ## Example
 
-![Thomas Davis](thomas-davis-example.jpg)
+![Thomas Davis Example](thomas-davis-example.jpg)
