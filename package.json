@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-berlin-grid-ats",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./index.js",
   "keywords": ["jsonresume", "jsonresume-theme", "resume", "berlin", "berlin-grid", "cv", "theme"],
